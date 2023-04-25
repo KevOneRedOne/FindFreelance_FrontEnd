@@ -1,0 +1,35 @@
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-family: Poppins, sans-serif;
+    vertical-align: middle;
+    border-radius: 36px;
+    cursor: pointer;
+    transition: 0.3s all;
+    &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    &__primary {
+        background: black;
+        color: white;
+        &:hover {
+            background: white;
+            border: 1px solid black;
+            color: black;
+        }
+    }
+    &__secondary {
+        background: white;
+        border: 1px solid black;
+        &:hover {
+            background: black;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.wrapper {
+    padding: 20px;
+    border-bottom: 1px solid #19376D;
+    .logo {
+        img {
+            width: 72px;
+        }
+    }
+    .nav {
+        &__list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            span {
+                margin-right: 20px;
+                font-size: 20px;
+                vertical-align: middle;
+            }
+        }
+        &__item {
+            margin: 0px 10px;
+            a {
+                color: #0B2447;
+                text-decoration: none;
+                font-size: 20px;
+                font-family: 'Poppins', sans-serif;
+                &:hover {
+                    color: #A5D7E8;
+                }
+            }
+        }
+    }
+}
