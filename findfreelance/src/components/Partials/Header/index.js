@@ -56,7 +56,7 @@ const Index = () => {
               <Button
                 type="button"
                 title="Se connecter"
-                className="btn__primary"
+                className="btn__secondary"
                 handleClick={() => router.push("/auth/login")}
               />
             </li>

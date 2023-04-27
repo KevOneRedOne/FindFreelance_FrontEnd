@@ -23,7 +23,27 @@
             align-items: center;
 
             img {
-                width: 72px;
+                width: 56px;
+            }
+
+            p {
+                background-color: transparent;
+                width: 30%;
+                color: #0B2447;
+                border: 2px solid #0B2447;
+                padding: 8px;
+                border-radius: 36px;
+                text-decoration: none;
+                text-align: center;
+                vertical-align: center;
+                cursor: pointer;
+                outline: none;
+                opacity: 1;
+
+                &:hover {
+                    background-color: #A5D7E8;
+                    color: #0B2447;
+                }
             }
         }
 
@@ -36,8 +56,9 @@
             .signup_layout__form__content__cards{
                 display: grid;
                 grid-auto-rows: 1fr;
-
-                .signup_layout__form__content__card{
+                grid-gap: 20px;
+                
+                .signup_layout__form__content__card_link{
                     position: relative;
                     display: flex;
                     justify-content: space-between;
@@ -49,6 +70,8 @@
                     padding: 24px;
                     margin-bottom: 20px;
                     width: 100%;
+                    cursor: pointer;
+                    text-align: left;
 
                     img {
                         width: 60px;
@@ -62,9 +85,23 @@
                         height: 36px;
                     }
 
+                    &:hover {
+                        background-color: #A5D7E8;
+                        color: #0B2447;
+                        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+                    }
+
+                    .signup_layout__form__content__card_title{
+                        font-weight: bolder;
+                        font-size: 16px;
+                        color: #0B2447;
+                    }
+                    .signup_layout__form__content__card_subtitle{
+                        font-size: 16px;
+                        color: #0B2447;
+                    }
                 }
             }
-
         }
     }
 

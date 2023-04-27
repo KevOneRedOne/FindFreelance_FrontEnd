@@ -3,10 +3,10 @@
     padding: 10px 15px;
     font-size: 18px;
     font-weight: 400;
-    color: black;
+    color: #0B2447;
     text-align: center;
     text-decoration: none;
-    font-family: Poppins, sans-serif;
+    font-family: "Poppins", sans-serif;
     vertical-align: middle;
     border-radius: 36px;
     cursor: pointer;
@@ -16,20 +16,34 @@
         pointer-events: none;
     }
     &__primary {
-        background: black;
+        background: #0B2447;
         color: white;
+        border: 1px solid #0B2447;
         &:hover {
             background: white;
-            border: 1px solid black;
-            color: black;
+            background-color: #A5D7E8;
+            border: 1px solid #0B2447;;
+            color: #0B2447;
         }
     }
     &__secondary {
-        background: white;
-        border: 1px solid black;
+        background: #576CBC;
+        color: white;
+        border: 1px solid #576CBC;
         &:hover {
-            background: black;
-            color: white;
+            background: white;
+            color: #576CBC;
+            background-color: #A5D7E8;
+            border: 1px solid #576CBC;
+        }
+    }
+    &__tertiary {
+        background: transparent;
+        border: 1px solid #0B2447;
+        color: #0B2447;
+        &:hover {
+            background: #A5D7E8;
+            color: #0B2447;
         }
     }
 }
