@@ -1,0 +1,113 @@
+.signup_layout{
+    display: flex;
+    justify-content: space-between;
+    min-height: 100%;
+    align-items: inherit;
+    height: 100vh;
+    font-family: "Poppins", sans-serif  !important;
+    color:#0B2447;
+
+    .signup_layout__form{
+        width: 32%;
+        min-width: 631px;
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 60px;
+
+        .signup_layout__form__header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+                width: 56px;
+            }
+
+            p {
+                background-color: transparent;
+                width: 30%;
+                color: #0B2447;
+                border: 2px solid #0B2447;
+                padding: 8px;
+                border-radius: 36px;
+                text-decoration: none;
+                text-align: center;
+                vertical-align: center;
+                cursor: pointer;
+                outline: none;
+                opacity: 1;
+
+                &:hover {
+                    background-color: #A5D7E8;
+                    color: #0B2447;
+                }
+            }
+        }
+
+        .signup_layout__form__content{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .signup_layout__form__content_user_data {
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-between;
+                
+            }
+            .signup_layout__form__content_user_number {
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .signup_layout__form__content_user_address{
+
+                .signup_layout__form__content_user_address_zip{
+                    width: 100%;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+            }
+            .signup_layout__form__content_btn {
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 20px;
+            }
+
+            .signup_layout__form__company{
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+        }
+    }
+    
+    .signin_layout__image{
+        width: 68%;
+        min-width: 768px;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        background-color: #A5D7E8;
+
+        img {
+            width: 1040px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 90px;
+        }
+    }
+}

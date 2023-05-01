@@ -2,9 +2,9 @@
 import styles from "./index.module.scss";
 import Link from "next/link";
 import Title from "@/components/UI/Title";
-import Logo from "../../../../public/images/logo/letter-f.png";
-import Image from "../../../../public/images/BusinessPeople.jpg";
-import chevronRight from "../../../../public/images/icons/chevronRight.png";
+import Logo from "@/../public/images/logo/letter-f.png";
+import Image from "@/../public/images/BusinessPeople.jpg";
+import chevronRight from "@/../public/images/icons/chevronRight.png";
 
 
 const Index = () => {
@@ -20,7 +20,7 @@ const Index = () => {
                         <Title Level="h2" title="Quelle est votre situation ?" />
                         <br />
                         <div className={styles.signup_layout__form__content__cards}>
-                                <Link className={styles.signup_layout__form__content__card_link} href={'/auth/register/company'}>
+                                <Link className={styles.signup_layout__form__content__card_link} href={'/auth/register/company/step1'}>
                                     <img src="//dam.malt.com/signup/identity-client-v2" loading="lazy" alt=""/>
                                     <div className={styles.signup_layout__form__content__card_content}>
                                         <div className={styles.signup_layout__form__content__card_title}>
@@ -30,7 +30,7 @@ const Index = () => {
                                     </div>
                                     <img className={styles.arrow} src={chevronRight.src} loading="lazy" alt=""/>
                                 </Link>
-                                <Link className={styles.signup_layout__form__content__card_link} href={'/auth/register/freelance'}>
+                                <Link className={styles.signup_layout__form__content__card_link} href={'/auth/register/freelance/step1'}>
                                     <img src="//dam.malt.com/signup/identity-freelancer-v2" loading="lazy" alt=""/>
                                     <div className={styles.signup_layout__form__content__card_content}>
                                         <div className={styles.signup_layout__form__content__card_title}>

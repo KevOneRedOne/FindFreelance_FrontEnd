@@ -53,59 +53,47 @@
             flex-direction: column;
             justify-content: center;
 
-            .signup_layout__form__content__cards{
-                display: grid;
-                grid-auto-rows: 1fr;
-                grid-gap: 20px;
+            .signup_layout__form__content_user_data {
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-between;
                 
-                .signup_layout__form__content__card_link{
-                    position: relative;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    border-radius: 24px;
-                    background-color: #fff;
-                    border: 1px solid #19376D;
-                    text-decoration: none;
-                    padding: 24px;
-                    margin-bottom: 20px;
-                    width: 100%;
-                    cursor: pointer;
-                    text-align: left;
-
-                    img {
-                        width: 60px;
-                        height: 60px;
-                        margin-right: 20px;
-                    }
-                    
-                    .arrow {
-                        margin-left: 10%;
-                        width: 36px;
-                        height: 36px;
-                    }
-
-                    &:hover {
-                        background-color: #A5D7E8;
-                        color: #0B2447;
-                        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
-                    }
-
-                    .signup_layout__form__content__card_title{
-                        font-weight: bolder;
-                        font-size: 16px;
-                        color: #0B2447;
-                    }
-                    .signup_layout__form__content__card_subtitle{
-                        font-size: 16px;
-                        color: #0B2447;
-                    }
-                }
             }
+            .signup_layout__form__content_user_number {
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .signup_layout__form__content_user_address{
+
+                .signup_layout__form__content_user_address_zip{
+                    width: 100%;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+            }
+            .signup_layout__form__content_btn {
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 20px;
+            }
+
+            .signup_layout__form__company{
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
         }
     }
-
-    .signup_layout__image{
+    
+    .signin_layout__image{
         width: 68%;
         min-width: 768px;
         padding: 30px;
@@ -116,9 +104,10 @@
         background-color: #576CBC;
 
         img {
-            width: 768px;
+            width: 1040px;
             max-width: 100%;
             height: auto;
+            border-radius: 90px;
         }
     }
 }

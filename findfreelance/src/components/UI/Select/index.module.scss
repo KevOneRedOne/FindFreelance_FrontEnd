@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  
+    label {
+      display: block;
+      font-size: 16px;
+      padding: 10px;
+  }
+  
+    select {
+      appearance: none;
+      background-color: #fff;
+      border: 2px solid #d3d3d3;
+      font-weight: 400;
+      line-height: 22px;
+      text-align: center;
+      border-radius: 4px;
+      padding: 10px 8px;
+      font-size: 16px;
+      border-radius: 16px;
+      font-family: "Poppins", sans-serif;
+      transition: border-color 0.5s;
+      cursor: pointer;
+  
+      &:focus {
+        outline: none;
+        text-align: start;
+        box-shadow: 0 0 0 3px rgba(50, 115, 220, 0.3);
+      }
+    }
+  }

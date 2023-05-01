@@ -1,0 +1,25 @@
+.notification {
+    padding: 10px;
+    border-radius: 16px;
+    margin: 16px 8px;
+    font-family: Poppins, sans-serif;
+
+    &.success {
+        background: #64c564e4;
+        p {
+            color: white;
+        }
+    }
+    &.error {
+        background: #fe3939e4;
+        p {
+            color: white;
+        }
+    }
+    &.warning {
+        background: #ffa600e4;
+        p {
+            color: white;
+        }
+    }
+}

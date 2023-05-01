@@ -2,8 +2,21 @@
     padding: 20px;
     border-bottom: 1px solid #19376D;
     .logo {
+        display: inline-flex;
+        justify-content: space-around;
+        align-items: center;
         img {
             width: 72px;
+        }
+        h1{
+            margin: 0px; 
+            padding: 16px;
+            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #0B2447;
+            text-align: center;
         }
     }
     .nav {

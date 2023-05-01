@@ -2,7 +2,8 @@ import { useRouter } from "next/router";
 import styles from "./index.module.scss";
 import Button from "@/components/UI/Button";
 import NavItem from "@/components/UI/NavItem";
-import Logo from "../../../../public/images/logo/letter-f.png";
+import Logo from "@/../public/images/logo/letter-f.png";
+import Title from "@/components/UI/Title";
 
 const Index = () => {
   const router = useRouter();
@@ -33,8 +34,8 @@ const Index = () => {
   return (
     <div className={`${styles.wrapper} flex`}>
       <div className={styles.logo}>
-        <h2>FindFreelance</h2>
         <img src={Logo.src} alt="FindFreelance" />
+        <h1>FindFreelance</h1>
       </div>
       <nav className={styles.nav}>
         <ul className={styles.nav__list}>
