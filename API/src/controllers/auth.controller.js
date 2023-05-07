@@ -156,7 +156,8 @@ exports.login = async (req, res) => {
                 message: 'User not found.Please check your email.', 
                 auth : false, 
                 token: null,
-                success: false
+                success: false,
+                type: 'error'
             });
         }
         const passwordIsValid = await bcrypt.compare(req.body.password, user.password);
@@ -165,7 +166,8 @@ exports.login = async (req, res) => {
                 message: 'Invalid password. Please check your password.', 
                 auth : false, 
                 token: null,
-                success: false
+                success: false,
+                type: 'warning'
             });
         }
         const userToken = jwt.sign({
@@ -178,14 +180,17 @@ exports.login = async (req, res) => {
             message: 'User logged successfully !',
             auth: true,
             token: userToken,
-            success: true
+            success: true,
+            type: 'success'
         });
     } catch (error) {
         res.status(500).send({
             message: 'Error while logging in : ' + error,
             auth: false,
             token: null,
-            success: false
+            success: false,
+            type: 'error'
+
         });
     }
 };

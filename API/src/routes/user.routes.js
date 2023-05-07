@@ -10,6 +10,7 @@ const verifyCompany = require("../middlewares/verifyUsers").verifyCompany;
 const verifyFreelancer = require("../middlewares/verifyUsers").verifyFreelancer;
 
 // -------------------- USER -------------------- //
+router.get("/me", verifyToken, userController.getMe);
 router.get("/all", verifyToken, verifyAdmin, userController.getAllUsers);
 router.get("/:id", userController.getOneUser);
 router.put("/admin/update/:id", verifyToken, verifyAdmin, userController.updateOneUser);

@@ -1,4 +1,41 @@
 const User = require('../models/user.model');
+const CircularJSON = require('circular-json');
+
+
+/*
+  * @route GET API.FindFreelance/v1/user/me
+  * @desc Get current user
+  * @access Private
+  * @param token
+  */
+exports.getMe = async (req, res, next) => {
+  try {
+    const user = User.findById(req.userToken.id).populate([
+      {
+        path: 'Freelancer',
+        model: 'Freelance',
+      },
+      {
+        path: 'Company',
+        model: 'Company',
+      },
+    ]);
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    user
+    .then((user) => {
+      res.json({
+        user: CircularJSON.parse(CircularJSON.stringify(user)),
+        success: true,
+        });
+    });
+
+  } catch (err) {
+    next(err);
+  }
+};
 
 /*
  * @route GET API.FindFreelance/v1/user/all
@@ -7,7 +44,7 @@ const User = require('../models/user.model');
  */
 exports.getAllUsers = async (req,res) => {
     try {
-        const users = await User.find();
+        const users = User.find();
         if (!users) {
           return res.status(404).send({
             message: "No users found.",

@@ -12,7 +12,6 @@ const verifyToken = (req, res, next) => {
         );
     }
     jwt.verify(token, process.env.SECRET_KEY, (err, jwtDecoded) => {
-        console.log(jwtDecoded);
         if (err) {
             return res.status(401).send(
                 {
