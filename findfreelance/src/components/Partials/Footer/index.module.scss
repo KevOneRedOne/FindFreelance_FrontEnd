@@ -1,0 +1,105 @@
+.footer { 
+  width: 100vw;
+  max-width: 1100px;
+  padding: auto;
+  padding-top: 68px;
+  padding-bottom: 68px;  
+  margin-left: auto;
+  margin-right: auto;
+
+  .footer_slice{
+    display: flex;
+    justify-content: flex-end;
+    gap: 80px;
+
+    .footer_infos{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 8px;
+      gap: 25px;
+      .logo {
+        display: inline-flex;
+        justify-content: space-around;
+        align-items: center;
+        img {
+          width: 32px;
+        }
+        h2 {
+          margin: 0px; 
+          padding: 20px;
+          font-size: 24px;
+          font-family: 'Poppins', sans-serif;
+          font-weight: 400;
+          letter-spacing: 2px;
+          color: #0B2447;
+          text-align: center;
+        }
+      }
+      .address {
+        margin-left: 16px;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        color: #0B2447;
+        a { 
+          color: #0B2447;
+          text-decoration: none;
+          &:hover {
+            color: #A5D7E8;
+          }
+        }
+      }
+      .network_icons{
+        display: flex;
+        .icon {
+          width: 24px;
+          margin: 16px;
+        }
+      }
+    }
+
+    .footer_links_section {
+      .footer_links_column{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 8px;
+        gap: 25px;
+  
+        .links_column_title{
+          font-size: 20px;
+          font-family: 'Poppins', sans-serif;
+          color: #576CBC;
+          font-weight: 550;
+          letter-spacing: 2px;
+          margin-bottom: 16px;
+          margin-top: 24px;
+          text-align: start;
+        }
+  
+        .links_column_content{
+          .links_column_content_subtitle{
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            color: #0B2447;
+            font-weight: 400;
+            margin-bottom: 16px;
+            &:hover {
+              cursor: pointer;
+              color: #A5D7E8;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer_copyright {
+    margin: 68px 0px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #0B2447;
+  }
+}
