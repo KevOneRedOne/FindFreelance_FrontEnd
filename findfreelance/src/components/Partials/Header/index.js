@@ -3,7 +3,6 @@ import styles from "./index.module.scss";
 import Button from "@/components/UI/Button";
 import NavItem from "@/components/UI/NavItem";
 import Logo from "@/../public/images/logo/letter-f.png";
-import Title from "@/components/UI/Title";
 
 const Index = () => {
   const router = useRouter();
@@ -13,11 +12,6 @@ const Index = () => {
     {
       title: "Home",
       link: "/",
-      className: styles.nav__item,
-    },
-    {
-      title: "À propos",
-      link: "./about",
       className: styles.nav__item,
     },
     {
