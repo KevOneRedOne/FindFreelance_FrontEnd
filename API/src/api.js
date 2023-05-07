@@ -1,6 +1,7 @@
 const express = require("express");
 
 const api = express();
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 require("dotenv").config();
@@ -26,6 +27,7 @@ mongoose
   });
 mongoose.set("strictQuery", true);
 
+api.use(cors());
 api.use("/API.FindFreelance/v1", apiRouter);
 
 api.listen(process.env.API_PORT, (err) => {

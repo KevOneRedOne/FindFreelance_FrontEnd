@@ -58,13 +58,15 @@ exports.register_Freelancer = async (req, res, next) => {
       res.status(201).send({
         message: 'User and Freelancer created successfully',
         auth: true,
-        token: userToken
+        token: userToken,
+        success: true
       });
     } catch (error) {
       res.status(500).send({
         message: 'Error while creating user and freelancer : ' + error,
         auth: false,
-        token: null
+        token: null,
+        success: false
       });
     }
   };
@@ -117,7 +119,8 @@ exports.register_User_inCompany = async (req, res) => {
         return res.status(201).send({ 
             message: 'User created successfully and added to an existing company', 
             auth : true, 
-            token: userToken 
+            token: userToken,
+            success: true
         });
     } else {
         await newCompany.save();
@@ -133,7 +136,8 @@ exports.register_User_inCompany = async (req, res) => {
         return res.status(201).send({
             message: 'User and Company created successfully', 
             auth : true, 
-            token: userToken 
+            token: userToken,
+            success: true
         });
     }
 };
@@ -151,7 +155,8 @@ exports.login = async (req, res) => {
             return res.status(404).send({ 
                 message: 'User not found.Please check your email.', 
                 auth : false, 
-                token: null 
+                token: null,
+                success: false
             });
         }
         const passwordIsValid = await bcrypt.compare(req.body.password, user.password);
@@ -159,7 +164,8 @@ exports.login = async (req, res) => {
             return res.status(401).send({ 
                 message: 'Invalid password. Please check your password.', 
                 auth : false, 
-                token: null 
+                token: null,
+                success: false
             });
         }
         const userToken = jwt.sign({
@@ -171,13 +177,15 @@ exports.login = async (req, res) => {
         res.status(200).send({
             message: 'User logged successfully !',
             auth: true,
-            token: userToken
+            token: userToken,
+            success: true
         });
     } catch (error) {
         res.status(500).send({
             message: 'Error while logging in : ' + error,
             auth: false,
-            token: null
+            token: null,
+            success: false
         });
     }
 };
@@ -195,14 +203,16 @@ exports.loginAsAdmin = async (req, res) => {
             return res.status(404).send({
                 message: 'User not found. Please check your email.',
                 auth: false,
-                token: null
+                token: null,
+                success: false
             });
         }
         if (!user.isAdmin) {
             return res.status(401).send({
                 message: 'You are not authorized to access this page. ',
                 auth: false,
-                token: null
+                token: null,
+                success: false
             });       
         }
         const passwordIsValid = await bcrypt.compare(req.body.password, user.password);
@@ -210,7 +220,8 @@ exports.loginAsAdmin = async (req, res) => {
             return res.status(401).send({
                 message: 'Invalid password.',
                 auth: false,
-                token: null
+                token: null,
+                success: false
             });
         }
         const userToken = jwt.sign({
@@ -220,13 +231,16 @@ exports.loginAsAdmin = async (req, res) => {
         res.status(200).send({
             message: 'User authenticated successfully !',
             auth: true,
-            token: userToken
+            token: userToken,
+            success: true,
+            admin: true
         });
     } catch (error) {
         res.status(500).send({
             message: 'Error while authenticating user : ' + error,
             auth: false,
-            token: null
+            token: null,
+            success: false
         });
     }
 };
@@ -244,13 +258,15 @@ exports.logout = async (req, res) => {
         res.status(200).send({
             message: 'User logged out successfully !',
             auth: false,
-            token: null
+            token: null,
+            success: true
         });
     } catch (error) {
         res.status(500).send({
             message: 'Error while logging out',
             auth: false,
-            token: null
+            token: null,
+            success: false
         });
     }
 };
