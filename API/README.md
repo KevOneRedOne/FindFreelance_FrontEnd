@@ -1,5 +1,5 @@
 # Author: 
-    Kévin Dos Santos Alves
+    Kévin Alves
 
 # FindFreelance_API
 FindFreelance API is a RESTful API that allows companies to search for freelance according to several criteria and propose them a mission. 
@@ -10,6 +10,26 @@ The Api using :
 
 ## Installation
 1. Clone the repository
-2. Run `npm install` to install all dependencies
-3. Run `npm run dev` to start the server
+```bash
+git clone https://github.com/KevOneRedOne/FindFreelance_API
+```
 
+2. Use the .env.example to create a .env file with your own credentials for the API.
+```bash
+cd API
+```
+```bash
+cp .env.example .env
+```
+
+3. Install the dependencies for the API
+```bash
+cd API
+```
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
