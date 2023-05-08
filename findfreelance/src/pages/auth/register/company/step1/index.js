@@ -11,13 +11,12 @@ import indicatifs from "@/utils/selectOptions/indicatifs.js";
 
 const Index = () => {
 
-
     return (
         <>
             <main className={styles.signup_layout}>
                 <div className={styles.signup_layout__form}>
                     <div className={styles.signup_layout__form__header}>
-                        <Link href={'/home'}><img src={Logo.src} loading="lazy" alt=""/></Link>
+                        <Link href={'/'}><img src={Logo.src} loading="lazy" alt=""/></Link>
                         <p><Link href={'/auth/login'}>Se connecter</Link></p>
                     </div>
                     <div className={styles.signup_layout__form__content}>

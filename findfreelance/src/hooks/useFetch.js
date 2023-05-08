@@ -4,6 +4,7 @@ const useFetch = ({ url, method, body, token }) => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [typeofError, setTypeofError] = useState(null);
 
   const fetchData = async () => {
     setLoading(true);
@@ -17,18 +18,19 @@ const useFetch = ({ url, method, body, token }) => {
         },
         ...(body && { body: JSON.stringify(body) }),
       });
-
       const dataJson = await response.json();
+      console.log(dataJson);
 
       if (!dataJson.success) {
+        setTypeofError(dataJson.type);
         throw new Error(dataJson.message);
       }
       setData(dataJson);
+      setTypeofError(dataJson.type);
 
     } catch (error) {
-      console.log(error);
       setError(error);
-
+     
     } finally {
       setTimeout(() => {
         setLoading(false);
@@ -37,7 +39,7 @@ const useFetch = ({ url, method, body, token }) => {
     }
   };
 
-  return { fetchData, data, error, loading };
+  return { fetchData, data, error, loading, typeofError };
 };
 
 export default useFetch;

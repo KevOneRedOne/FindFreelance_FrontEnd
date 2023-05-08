@@ -1,9 +1,9 @@
-import Title from "@/components/UI/Title";
+import Footer from "@/components/Partials/Footer";
 
 export default function Home() {
   return (
     <>
-      <Title Level="h1" title="Homepage" />
+      <Footer />
     </>
   )
 };

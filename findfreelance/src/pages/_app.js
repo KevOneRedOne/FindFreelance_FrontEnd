@@ -2,7 +2,7 @@ import '@/styles/globals.scss';
 import { useRouter } from "next/router";
 import MainLayout from '@/components/Layouts/MainLayout';
 import AuthLayout from '@/components/Layouts/AuthLayout';
-// import { UserContextProvider } from '@/context/UserContext';
+import { UserContextProvider } from '@/context/userContext';
 
 export default function App({ Component, pageProps }) {
  
@@ -10,9 +10,8 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-
-      {/* <UserContextProvider> */}
-      {
+      <UserContextProvider>
+        {
         router.asPath.startsWith("/auth") ? (
           <AuthLayout>
               <Component {...pageProps} />
@@ -24,7 +23,7 @@ export default function App({ Component, pageProps }) {
             </MainLayout>
         )
         }
-      {/* </UserContextProvider> */}
+      </UserContextProvider>
     </>
   )
 }

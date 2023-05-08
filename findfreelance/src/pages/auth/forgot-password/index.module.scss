@@ -1,0 +1,91 @@
+.signin_layout{
+    display: flex;
+    justify-content: space-between;
+    min-height: 100%;
+    align-items: inherit;
+    height: 100vh;
+    font-family: "Poppins", sans-serif  !important;
+
+    .signin_layout__form{
+        width: 32%;
+        min-width: 631px;
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 60px;
+
+        .signin_layout__form__header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+                width: 56px;
+            }
+
+            p {
+                background-color: transparent;
+                width: 30%;
+                color: #0B2447;
+                border: 2px solid #0B2447;
+                padding: 8px;
+                border-radius: 36px;
+                text-decoration: none;
+                text-align: center;
+                vertical-align: center;
+                cursor: pointer;
+                outline: none;
+                opacity: 1;
+
+                &:hover {
+                    background-color: #A5D7E8;
+                    color: #0B2447;
+                }
+            }
+        }
+
+        .signin_layout__form__content{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .submit_btn{
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            p {
+                color: #0B2447;
+                padding: 10px;
+                text-decoration: none;
+                font-size: 18px;
+                font-family: 'Poppins', sans-serif;
+                &:hover {
+                    color: rgb(165, 215, 232);
+                    cursor: pointer;
+                }
+            }   
+            
+        }
+
+    }
+    .signin_layout__image{
+        width: 68%;
+        min-width: 768px;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        background-color: #A5D7E8;
+
+        img {
+            width: 800px;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
