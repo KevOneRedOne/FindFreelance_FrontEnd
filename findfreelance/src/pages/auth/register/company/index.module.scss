@@ -53,42 +53,42 @@
             flex-direction: column;
             justify-content: center;
 
-            .signup_layout__form__content_user_data {
-                width: 100%;
-                display: inline-flex;
-                align-items: center;
-                justify-content: space-between;
+            // .signup_layout__form__content_user_data {
+            //     width: 100%;
+            //     display: inline-flex;
+            //     align-items: center;
+            //     justify-content: space-between;
                 
-            }
-            .signup_layout__form__content_user_number {
-                width: 100%;
-                display: inline-flex;
-                align-items: center;
-                justify-content: space-between;
-            }
+            // }
+            // .signup_layout__form__content_user_number {
+            //     width: 100%;
+            //     display: inline-flex;
+            //     align-items: center;
+            //     justify-content: space-between;
+            // }
 
-            .signup_layout__form__content_user_address{
+            // .signup_layout__form__content_user_address{
 
-                .signup_layout__form__content_user_address_zip{
-                    width: 100%;
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: space-between;
-                }
+            //     .signup_layout__form__content_user_address_zip{
+            //         width: 100%;
+            //         display: inline-flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //     }
 
-            }
+            // }
             .signup_layout__form__content_btn {
                 display: flex;
-                justify-content: flex-end;
+                justify-content: space-around;
                 margin-top: 20px;
             }
 
-            .signup_layout__form__company{
-                width: 100%;
-                display: inline-flex;
-                align-items: center;
-                justify-content: space-between;
-            }
+            // .signup_layout__form__company{
+            //     width: 100%;
+            //     display: inline-flex;
+            //     align-items: center;
+            //     justify-content: space-between;
+            // }
 
         }
     }

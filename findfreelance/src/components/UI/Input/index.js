@@ -17,7 +17,7 @@ const Index = ({ label, type, name, value, isRequired, placeholder, onChange, ma
         onChange={onChange} 
         maxLength={maxlength}
         pattern={pattern}
-        max={max}         
+        max={max} 
       />
     </div>
   );

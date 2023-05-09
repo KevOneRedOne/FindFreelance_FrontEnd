@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@next/font": "^13.2.4",
+    "@remix-run/router": "^1.6.1",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router": "^6.11.1"
   },
   "devDependencies": {
     "sass": "^1.60.0"

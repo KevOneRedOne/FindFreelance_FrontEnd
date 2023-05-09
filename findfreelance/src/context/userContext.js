@@ -7,15 +7,10 @@ const UserContext = createContext({
     user:{} ,
     token: null,
     isAdmin: false,
-    isFreelance: false,
+    isFreelancer: false,
     isCompany: false,
     login: () => {},
     logout: () => {},
-    // updateUser: () => {},
-    // register: () => {},
-    // deleteUser: () => {},
-    // error: null,
-    // loading: false,
 });
 
 
@@ -27,7 +22,7 @@ export const UserContextProvider = ({ children }) => {
     const [token, setToken] = useState(null);
     const [isLogged, setIsLogged] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
-    const [isFreelance, setIsFreelance] = useState(false);
+    const [isFreelancer, setIsFreelancer] = useState(false);
     const [isCompany, setIsCompany] = useState(false);
 
     const { fetchData, data, error, loading } = useFetch({url: "/user", method: "GET", token: token, body: null});
@@ -59,11 +54,11 @@ export const UserContextProvider = ({ children }) => {
     }, [data]);
 
     const login = (user) => {
-        if (user.isAdmin) {
+        if (user.user.isAdmin) {
             setIsAdmin(true);
-        } else if (user.isFreelance) {
-            setIsFreelance(true);
-        } else if (user.isCompany) {
+        } else if (user.user.isFreelancer) {
+            setIsFreelancer(true);
+        } else if (user.user.isCompany) {
             setIsCompany(true);
         }
         setUser(user);
@@ -86,7 +81,6 @@ export const UserContextProvider = ({ children }) => {
         setUser(user);
     };
 
-
     
     const context = {
         isLogged,
@@ -96,7 +90,7 @@ export const UserContextProvider = ({ children }) => {
         updateUser,
         token,
         isAdmin,
-        isFreelance,
+        isFreelancer,
         isCompany
     };
 

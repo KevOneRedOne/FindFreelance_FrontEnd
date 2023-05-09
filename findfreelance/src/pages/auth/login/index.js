@@ -43,8 +43,6 @@ const Index = () => {
             setToken(data.token);
             localStorage.setItem("token", data.token);
         }
-        console.log(data);
-
     }, [data]);
 
     useEffect(() => {
@@ -70,7 +68,6 @@ const Index = () => {
     const submitLogin = (e) => {
         e.preventDefault();
         fetchData();
-        
     }
 
     return (

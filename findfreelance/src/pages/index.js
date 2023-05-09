@@ -1,9 +1,9 @@
-import Footer from "@/components/Partials/Footer";
+// import Footer from "@/components/Partials/Footer";
 
 export default function Home() {
   return (
     <>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 };

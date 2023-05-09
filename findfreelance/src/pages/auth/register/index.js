@@ -20,7 +20,7 @@ const Index = () => {
                         <Title Level="h2" title="Quelle est votre situation ?" />
                         <br />
                         <div className={styles.signup_layout__form__content__cards}>
-                                <Link className={styles.signup_layout__form__content__card_link} href={'/auth/register/company/step1'}>
+                                <Link className={styles.signup_layout__form__content__card_link} href={'/auth/register/company'}>
                                     <img src="//dam.malt.com/signup/identity-client-v2" loading="lazy" alt=""/>
                                     <div className={styles.signup_layout__form__content__card_content}>
                                         <div className={styles.signup_layout__form__content__card_title}>

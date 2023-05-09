@@ -14,7 +14,7 @@ const FreelanceSchema = new mongoose.Schema({
     },
     socialStatus: {
         type: String,
-        enum: ['EI','EURL'],
+        enum: ['EI','EURL','EIRL'],
         required: false,
         default: 'EI',
         trim: true

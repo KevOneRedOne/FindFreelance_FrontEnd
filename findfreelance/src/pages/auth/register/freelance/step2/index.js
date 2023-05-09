@@ -7,15 +7,9 @@ import image from "@/../public/images/freelance.jpg";
 import Select from "@/components/UI/Select";
 import Button from "@/components/UI/Button";
 import companies from "@/utils/selectOptions/companies";
+import FreelanceForm from "@/components/UI/Form/FreelanceForm";
 
 const Index = () => {
-    const socialStatus= [
-        {value: "EI", label: "EI"},
-        {value: "EIRL", label: "EIRL"},
-        {value: "EURL", label: "EURL"},
-    ]
-        
-
 
 
     return (
@@ -29,38 +23,7 @@ const Index = () => {
                     <div className={styles.signup_layout__form__content}>
                         <Title Level="h2" title="Vos informations Freelance" />
                         <form onSubmit={(e) => {console.log(e)}}>
-                            <div className={styles.signup_layout__form__company}>
-                                <Select
-                                    label={"Statut social"}
-                                    name={"companyType"}
-                                    isRequired={true}
-                                    onChange={(e) => {console.log(e)}}
-                                    options={socialStatus}
-                                />
-                            </div>
-                            <Input
-                                label={"Raison sociale"}
-                                type="text"
-                                name={"companyName"}
-                                isRequired={true}
-                                onChange={(e) => {console.log(e)}}
-                            />
-                            <div className={styles.signup_layout__form__company}>
-                                <Input
-                                    label= {"Année d'expérience"}
-                                    type="number"
-                                    name={"experience"}
-                                    isRequired={true}
-                                    onChange={(e) => {console.log(e)}}
-                                />
-                                <Input
-                                    label= {"Honoraire journalier"}
-                                    type="number"
-                                    name={"honor"}
-                                    isRequired={true}
-                                    onChange={(e) => {console.log(e)}}
-                                />
-                            </div>
+                            <FreelanceForm />
 
                             <div className={styles.signup_layout__form__content_btn}>
                                 <Link href={'/auth/register/freelance/step1'}>Précédent</Link>

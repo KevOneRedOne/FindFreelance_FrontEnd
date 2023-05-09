@@ -25,12 +25,16 @@
             align-items: center;
             list-style: none;
             span {
+                cursor: pointer;
                 margin: 10px 10px;
                 margin-right: 20px;
                 font-size: 20px;
                 vertical-align: middle;
                 color: #0B2447;
                 font-family: Poppins, sans-serif;
+                &:hover {
+                    color: #A5D7E8;
+                }
             }
         }
         &__item {

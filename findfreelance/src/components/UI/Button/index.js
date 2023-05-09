@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 
-const Index = ({ type, title, handleClick, className, disabled }) => {
+const Index = ({ type, title, handleClick, className, disabled=false }) => {
   return (
     <button
       type={type}

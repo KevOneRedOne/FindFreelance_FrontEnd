@@ -5,6 +5,7 @@ import Button from "@/components/UI/Button";
 import NavItem from "@/components/UI/NavItem";
 import Logo from "@/../public/images/logo/letter-f.png";
 import UserContext from "@/context/userContext";
+import Link from "next/link";
 
 const Index = () => {
   const router = useRouter();
@@ -27,11 +28,6 @@ const Index = () => {
 
   const menuLoggedFreelance = [
     {
-      title: "Mon profil",
-      link: "./account/profile",
-      className: styles.nav__item,
-    },
-    {
       title: "Dashboard",
       link: "./dashboard/freelance",
       className: styles.nav__item,
@@ -40,11 +36,6 @@ const Index = () => {
 
   const menuLoggedCompany = [
     {
-      title: "Mon profil",
-      link: "./account/profile",
-      className: styles.nav__item,
-    },
-    {
       title: "Dashboard",
       link: "./dashboard/company",
       className: styles.nav__item,
@@ -52,11 +43,6 @@ const Index = () => {
   ];
 
   const menuLoggedAdmin = [
-    {
-      title: "Mon profil",
-      link: "./account/profile",
-      className: styles.nav__item,
-    },
     {
       title: "Les utilisateurs",
       link: "./admin/users",
@@ -73,25 +59,15 @@ const Index = () => {
       className: styles.nav__item,
     },
     {
-      title: "Les entrprises",
+      title: "Les entreprises",
       link: "./admin/companies",
-      className: styles.nav__item,
-    },
-    {
-      title: "Les freelances",
-      link: "./admin/freelances",
       className: styles.nav__item,
     },
     {
       title: "Les missions",
       link: "./admin/missions",
       className: styles.nav__item,
-    },
-    {
-      title: "Les propositions",
-      link: "./admin/propositions",
-      className: styles.nav__item,
-    },
+    }
   ];
     
 
@@ -103,14 +79,12 @@ const Index = () => {
         setMenu([...menuLoggedFreelance]);
       } else if (isCompany) {
         setMenu([...menuLoggedCompany]);
-      } else {
-        setMenu([...menuDefault]);
       }
     } else {
       setMenu([...menuDefault]);
     }
     
-  }, [user, isLogged, isAdmin]);
+  }, [user, isLogged, isAdmin, isFreelancer, isCompany]);
 
 
   return (
@@ -128,7 +102,7 @@ const Index = () => {
           }
           { isLogged ? (
             <li>
-              <span>Bonjour, {user && user.firstName}</span>
+              <Link href="/account/profile"><span>Bonjour, {user && user.firstName}</span></Link>
               <Button
                 type="button"
                 title="Se déconnecter"

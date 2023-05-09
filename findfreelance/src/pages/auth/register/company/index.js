@@ -1,53 +1,58 @@
 import Link from "next/link";
 import {useRouter} from "next/router";
+import {useEffect, useState} from "react";
 import useFetch from "@/hooks/useFetch";
-import { useState, useEffect } from "react";
-import styles from "./../index.module.scss";
+import styles from "./index.module.scss";
 import Title from "@/components/UI/Title";
 import Logo from "@/../public/images/logo/letter-f.png";
-import image from "@/../public/images/freelance.jpg";
+import image from "@/../public/images/company.jpg";
 import Button from "@/components/UI/Button";
-import UserForm from "@/components/UI/Form/UserForm";
-import FreelanceForm  from "@/components/UI/Form/FreelanceForm";
 import Notification from "@/components/UI/Notification";
+import UserForm from "@/components/UI/Form/UserForm/";
+import CompanyForm from "@/components/UI/Form/CompanyForm/";
 
 
 const Index = () => {
     const router = useRouter();
+    const [userForm, setUserForm] = useState({
+        lastName: '' ,
+        firstName: '' ,
+        email: '',
+        password: '' ,
+        phoneNumber: '', 
+        address: {
+            street: '',
+            city: '', 
+            zipCode: '' ,
+            country: '' ,
+        },
+    });
+    const [companyForm, setCompanyForm] = useState({
+        socialReason:'',
+        socialStatus:'' ,
+        socialCapital: 0,
+        siret:0,
+        address: {
+            street: '',
+            city: '' ,
+            zipCode: '',
+            country: '', 
+        }
+    });
     const [registerStep, setRegisterStep] = useState(0);
     const [errorPwd, setError] = useState(false);
     const [token, setToken] = useState(null);
-    const [userForm, setUserForm] = useState({
-        lastName: '',
-        firstName: '',
-        email: '',
-        password: '',
-        phoneNumber: '',
-        address: {
-            street: '',
-            city: '',
-            zipCode: '',
-            country: ''
-        },
-    });
-    const [freelanceForm, setFreelanceForm] = useState({
-        socialReason: '',
-        socialStatus: '',
-        dailyRate: 0,
-        yearsOfExperience: 0,
-        jobs: [],
-        skills: [],
-    });
+
+
     const { fetchData, data, error, loading } = useFetch({
-        url: "/auth/register/freelancer",
+        url: "/auth/register/user_inCompany",
         method: "POST",
         body: {
             user: userForm,
-            freelance: freelanceForm
+            company: companyForm
         },
         token: null
     });
-
 
     const handleChangeUser = (e) => {
         if (e.target.name === 'street' || e.target.name === 'city' || e.target.name === 'zipCode' || e.target.name === 'country') {
@@ -66,9 +71,9 @@ const Index = () => {
         }
     };
 
-    const handleChangeFreelance = (e) => {
+    const handleChangeCompany = (e) => {
         if (e.target.name === 'street' || e.target.name === 'city' || e.target.name === 'zipCode' || e.target.name === 'country') {
-            setFreelanceForm((prevState) => ({
+            setCompanyForm((prevState) => ({
               ...prevState,
               address: {
                 ...prevState.address,
@@ -76,8 +81,8 @@ const Index = () => {
               }
             }));
         } else {
-            setFreelanceForm({
-                ...freelanceForm,
+            setCompanyForm({
+                ...companyForm,
                 [e.target.name]: e.target.value
             });
         }
@@ -114,12 +119,12 @@ const Index = () => {
                 <div className={styles.signup_layout__form}>
                     <div className={styles.signup_layout__form__header}>
                         <Link href={'/'}><img src={Logo.src} loading="lazy" alt=""/></Link>
-                        <p><Link href={'/auth/login'}>Se connecter</Link></p>
+                        <p><Link href={'../../../auth/login'}>Se connecter</Link></p>
                     </div>
                     <div className={styles.signup_layout__form__content}>
-                    <Title Level="h2" title="Vos informations" />
+                        <Title Level="h2" title="Vos informations" />
                         <form onSubmit={(e) => {submitRegister(e)}}>
-                             {
+                            {
                                 registerStep === 0 && (
                                     <>
                                         <UserForm userForm={userForm} handleChange={handleChangeUser}/>
@@ -137,7 +142,7 @@ const Index = () => {
                             {
                                 registerStep === 1 && (
                                     <>
-                                        <FreelanceForm freelanceForm={freelanceForm} handleChange={handleChangeFreelance}/>
+                                        <CompanyForm companyForm={companyForm} handleChange={handleChangeCompany}/>
                                         <div className={styles.signup_layout__form__content_btn}>
                                             <Button
                                                 type="button"
@@ -165,7 +170,7 @@ const Index = () => {
                     </div>
                 </div>
                 <div className={styles.signin_layout__image}>
-                    <img src={image.src} alt="register_freelance" />
+                    <img src={image.src} alt="register_company" />
                 </div>
             </main>
         </>
