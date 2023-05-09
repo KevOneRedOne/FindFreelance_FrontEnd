@@ -30,7 +30,7 @@ const Index = () => {
                                     </div>
                                     <img className={styles.arrow} src={chevronRight.src} loading="lazy" alt=""/>
                                 </Link>
-                                <Link className={styles.signup_layout__form__content__card_link} href={'/auth/register/freelance/step1'}>
+                                <Link className={styles.signup_layout__form__content__card_link} href={'/auth/register/freelance'}>
                                     <img src="//dam.malt.com/signup/identity-freelancer-v2" loading="lazy" alt=""/>
                                     <div className={styles.signup_layout__form__content__card_content}>
                                         <div className={styles.signup_layout__form__content__card_title}>

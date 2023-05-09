@@ -2,7 +2,7 @@ import Link from "next/link";
 import {useRouter} from "next/router";
 import useFetch from "@/hooks/useFetch";
 import { useState, useEffect } from "react";
-import styles from "./../index.module.scss";
+import styles from "./index.module.scss";
 import Title from "@/components/UI/Title";
 import Logo from "@/../public/images/logo/letter-f.png";
 import image from "@/../public/images/freelance.jpg";
