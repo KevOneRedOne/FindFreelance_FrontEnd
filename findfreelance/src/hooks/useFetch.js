@@ -19,7 +19,8 @@ const useFetch = ({ url, method, body, token }) => {
         ...(body && { body: JSON.stringify(body) }),
       });
       const dataJson = await response.json();
-
+      console.log(dataJson);
+      
       if (!dataJson.success) {
         setTypeofError(dataJson.type);
         throw new Error(dataJson.message);

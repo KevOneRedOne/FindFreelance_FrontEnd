@@ -19,7 +19,7 @@ router.delete("/admin/delete/:id", verifyToken, verifyAdmin, userController.dele
 router.delete("/myaccount/delete", verifyToken, userController.delete_myAccount);
 
 // -------------------- FREELANCER -------------------- //
-router.get("/freelancer/all", verifyToken, freelanceController.getAllFreelances);
+router.get("/freelancer/all", freelanceController.getAllFreelances);
 router.get("/freelancer/:id", verifyToken, freelanceController.getOneFreelance);
 router.put("/freelancer/update/:id", verifyToken, verifyFreelancer, freelanceController.updateFreelance);
 router.delete("/freelancer/delete/:id", verifyToken, verifyFreelancer, freelanceController.deleteFreelance);
